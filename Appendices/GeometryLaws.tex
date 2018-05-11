@@ -251,8 +251,13 @@ Please note that all angles are in degrees and all symbolic values are within th
 
 \section*{Circle Definitions}
 \begin{tikzpicture}
-    \draw (0,0) circle (5cm);
-    \draw [densely dotted](-5,-5)--(-5,5);
+    \draw[color=purple] (5,0) arc (0:90:5) node[right, pos=0.5]{Intercepted Arc};
+    \draw[color=black] (5,0) arc (360:90:5);
+    \draw [densely dotted, thick, color=blue](-5,-5)--(-5,5) node[left, pos=0.25]{Tangent};
+    \draw [dash dot, color=cyan] (-3.5355339059327378,-3.5355339059327378)--(0,5);
+    \draw [dash dot, color=cyan] (-3.5355339059327378,-3.5355339059327378)--(5,0) node[below,pos=0.25,sloped]{Intercepted Angle};
+    \draw [dashed, color=brown] (-3.5355339059327378,3.5355339059327378)--(0,0) node[above,pos=0.25,sloped]{Radius};
+    \draw [dashed, color=red] (-5,0)--(5,0) node[above,pos=0.75]{Diameter};
 \end{tikzpicture}
 
 \begin{enumerate}
