@@ -1,0 +1,8 @@
+\contentsline {chapter}{Preface}{iii}
+\contentsline {chapter}{\numberline {1}Circles}{1}
+\contentsline {chapter}{\numberline {2}Polynomials}{3}
+\contentsline {chapter}{\numberline {3}The Square Root Operator and Complex Numbers}{5}
+\contentsline {chapter}{\numberline {4}Real Valued Functions}{7}
+\contentsline {chapter}{\numberline {5}Exponents and Logarithms}{9}
+\contentsline {chapter}{\numberline {A}The Laws of the Euclidean Geometries}{11}
+\contentsline {chapter}{\numberline {B}Creating Graphics}{23}
