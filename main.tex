@@ -3,9 +3,19 @@
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{tikz}
+\DeclareMathOperator{\sign}{sign}
 
 \begin{document}
+\theoremstyle{plain}
+%Reset by section%
+\newtheorem{thm}{Theorem}[section]
+%Definiton Numbering Depends on Theorem Numbering%
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definiton}
+
 \frontmatter
 \title{Math 4109}
 \author{Jonathan Zhou}
@@ -15,6 +25,7 @@
 \tableofcontents
 \mainmatter
 \include{Chapters/Circles}
+\include{Chapters/Conics}
 \include{Chapters/Polynomials}
 \include{Chapters/SquareRoots}
 \include{Chapters/Functions}
