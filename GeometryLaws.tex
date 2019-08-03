@@ -1,8 +1,25 @@
-\chapter{The Laws of the Euclidean Geometries}
-\paragraph{Acknowledgements}
-Thanks to Cadence Weddle, Leona Liu, and Zoya Yan.
-\paragraph{Note}
-Please note that all angles are in degrees and all symbolic values are within the set $\{x\in\mathbb{R} \mid x\geq0\}$.
+\documentclass[11pt,letterpaper]{report}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{tikz}
+\DeclareMathOperator{\sign}{sign}
+
+\begin{document}
+\theoremstyle{plain}
+%Reset by section%
+\newtheorem{thm}{Theorem}[section]
+%Definiton Numbering Depends on Theorem Numbering%
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definiton}
+
+\chapter*{The Laws of the Euclidean Geometry\\\vspace{.5em} \Large{Jonathan Zhou}}
+\paragraph{Note:}
+Please note that all angles are in degrees. 
+
 \section*{Primitive Notions}
 \begin{enumerate}
     \item Point
@@ -12,7 +29,7 @@ Please note that all angles are in degrees and all symbolic values are within th
 
 \section*{Definition of Basic Objects}
 \begin{enumerate}
-     \item A segment is the set of all points between two distinct points (called the endpoints)
+     \item A segment is the set of all points between two distinct points (termed endpoints)
      \item A ray is a segment together with the set of all points beyond one of the endpoints
      \item Opposite rays are rays which lie on the same line and whose only point of intersection is their common endpoint
      \item Collinear points are points which lie on the same line\end{enumerate}
@@ -364,3 +381,76 @@ $a\cdot d = c \cdot b$ & $a=b$ & $b\cdot(c+b)=d\cdot(a+d)$ & $a\cdot(a+b)=c^{2}$
     \item If the slope of a line is the negative reciprocal of the slope of another line, then the two lines are perpendicular.
     \item If the slope of two lines are equal, then the lines are parallel
 \end{enumerate}
+\newpage
+\section*{The Conic Sections}
+The following variables will represent special values concerning conic sections.
+\begin{figure}[H]
+    \begin{minipage}{\textwidth}
+        \begin{table}[H]
+        \caption{Special Values in Conic Sections}
+        \centering
+        \begin{tabular}{c c}
+        \hline
+        $a$ & The length of the semi-major axis.\footnote{($\frac{1}{2}$ of the length of the major axis)}\\
+        $b$ & The length of the semi-minor axis.\footnote{($\frac{1}{2}$ of the length of the minor axis)}\\
+        $h$ & The x-offset of the conic from the origin.\\
+        $k$ & The y-offset of the conic from the origin.\\
+        \hline
+        \end{tabular}
+        \label{table:SpecValsConics}
+        \end{table}
+    \end{minipage}
+\end{figure}
+
+\subsection*{The Circle}
+\begin{defn}[The Standard Form for an Equation of the Circle]
+$\displaystyle{(x-h)^{2}+(y-k)^{2}=c^{2}}$
+\end{defn}
+In the circle, the length of the semi-major axis (and by extension the semi-minor axis) equivalent to as the radius. Thus, this form is also known as the \emph{Center Radius Form}. In this equation the coordinates $(h,k)$ represent the center of the circle and $c$ represents the radius. In light of this, a circle can be considered a special case of the Ellipse.
+
+\begin{defn}[The Expanded Form of an Equation for the Circle]
+\begin{gather*}
+\displaystyle{ax^{2}+by^{2}+cx+dy+e=0}\\
+\text{where $a=b$ and $\sign{a}=\sign{b}=\sign{c}$}
+\end{gather*}
+\end{defn}
+Note that this form of the equation can be manipulated back into the center radius form through completing the square.
+
+\begin{subequations}
+The steps below demonstrate conversion from Expanded to Center Radius Form:
+    \begin{align}
+        \displaystyle{ax^{2}+by^{2}+cx+dy+e=0}\\
+        \displaystyle{ax^{2}+ay^{2}+cx+dy+e=0}\\
+        \displaystyle{{ax^{2}+ay^{2}+cx+dy=-e}}\\
+        \displaystyle{{ax^{2}+ay^{2}+cx+dy=-e}}\\
+        \displaystyle{{x^{2}+y^{2}+\frac{c}{a}x+\frac{d}{a}y=-\frac{e}{a}}}\\
+        \displaystyle{\left(x^{2}+\frac{c}{a}x+\left(\frac{c}{2a}\right)^{2}\right)+\left(y^{2}+\frac{d}{a}x+\left(\frac{d}{2a}\right)^{2}\right)=-\frac{e}{a}+\left(\frac{c}{2a}\right)^{2}+\left(\frac{d}{2a}\right)^{2}}\\
+        \displaystyle{\left(x+\frac{c}{2a}\right)^{2}+\left(y+\frac{d}{2a}\right)^{2}=\left(-\frac{e}{a}+\left(\frac{c}{2a}\right)^{2}+\left(\frac{d}{2a}\right)^{2}\right)}
+    \end{align}
+\end{subequations}
+
+\begin{subequations}
+Here is a concrete example of the above process:
+    \begin{align}
+        4x^2+4y^2-16x-24y+51=0\\
+        4x^2+4y^2-16x-24y=-51\\
+        x^2+y^2-4x-6y=-\frac{51}{4}\\
+        (x^2-4x+4)+(y^2-6y+9)=-\frac{51}{4}+4+9\\
+        (x-2)^2+(y-3)^2=\frac{1}{4}
+    \end{align}
+\end{subequations}
+
+\subsection*{The Ellipse}
+\begin{defn}[The Standard Form for an Equation of the Ellipse]
+$\displaystyle{\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1}$
+\end{defn}
+
+\subsection*{The Parabola}
+\begin{defn}[The Standard Form for an Equation of the Parabola]
+$\displaystyle{y=4ax}$
+\end{defn}
+\subsection*{The Hyperbola}
+\begin{defn}[The Standard Form for an Equation of the Ellipse]
+$\displaystyle{\frac{(x-h)^2}{a^2}-\frac{(y-k)^2}{b^2}=1}$
+\end{defn}
+\end{document}
